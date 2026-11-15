@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://5uqb1s06jvh1"]
+
+[ext_resource type="Script" uid="uid://cef1xxftytwk1" path="res://ball.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://g4y3jx5ufvl3" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cvkaajhntnytf" path="res://paddle.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://be3h8kh6evwiv" path="res://ART/tennis.jpeg" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://kpqfkb5k6w7p" path="res://ART/tennis ground.jpeg" id="5_7mycd"]
+[ext_resource type="AudioStream" uid="uid://bnvxjub3u2ie4" path="res://music/02 - Door.mp3" id="6_7mycd"]
+
+[node name="Main" type="Node2D" unique_id=1223804304]
+script = ExtResource("1_h2yge")
+background_color = Color(0.078431375, 0.078431375, 0.12156863, 0)
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=59027554]
+script = ExtResource("1_0xm2m")
+ball_texture = ExtResource("3_lquwl")
+
+[node name="Paddle" type="CharacterBody2D" parent="." unique_id=1282429221]
+script = ExtResource("2_h2yge")
+color = Color(1, 1, 0.03137255, 1)
+
+[node name="Court" type="Sprite2D" parent="." unique_id=472287847]
+z_index = -1
+position = Vector2(576, 325)
+scale = Vector2(0.717, 0.717)
+texture = ExtResource("5_7mycd")
+
+[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1452241083]
+stream = ExtResource("6_7mycd")
+volume_db = -10.0
+autoplay = true
